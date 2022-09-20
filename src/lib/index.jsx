@@ -95,7 +95,7 @@ class SingleOtpInput extends PureComponent {
           )}
           placeholder={placeholder}
           className={this.getClasses(
-            inputStyle,
+            typeof inputStyle === 'function' ? inputStyle(index) : inputStyle,
             focus && focusStyle,
             isDisabled && disabledStyle,
             hasErrored && errorStyle
